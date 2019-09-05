@@ -70,6 +70,6 @@ double sin_pi(double x)
 	}
 
 	rem = sin(pi * rem);
-	return invert ? (double)(-rem) : rem;
+	return invert ? (-rem) : rem;
 }
 
