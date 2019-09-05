@@ -33,6 +33,8 @@
 #include <math.h>
 #include <stdbool.h>
 
+#include "sinpi.h"
+
 static const double pi = 3.141592653589793238462643383279502884e+00;
 
 double sin_pi(double x)
