@@ -21,6 +21,8 @@ add_library(${PROJECT_NAME}
     "trigonometric_version.c"
 )
 
+target_link_libraries(${PROJECT_NAME} PUBLIC m)
+
 add_library(${PROJECT_NAME}:${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 add_dependencies(${PROJECT_NAME} generate_semver)
