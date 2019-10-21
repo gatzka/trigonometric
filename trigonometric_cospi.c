@@ -72,6 +72,5 @@ double trigonometric_cos_pi(double x)
 	}
 
 	return invert ? (-rem) : rem;
-
 }
 
