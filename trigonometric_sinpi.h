@@ -30,14 +30,16 @@
  * Copyright (c) 2007 John Maddock
  */
 
-#ifndef COS_PI_H
-#define COS_PI_H
+#ifndef TRIGONOMETRIC_SIN_PI_H
+#define TRIGONOMETRIC_SIN_PI_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-double cos_pi(double x);
+#include "trigonometric_export.h"
+
+TRIGONOMETRIC_EXPORT double trigonometric_sin_pi(double x);
 
 #ifdef __cplusplus
 }

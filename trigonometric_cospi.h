@@ -30,47 +30,20 @@
  * Copyright (c) 2007 John Maddock
  */
 
-#include <math.h>
-#include <stdbool.h>
+#ifndef TRIGONOMETRIC_COS_PI_H
+#define TRIGONOMETRIC_COS_PI_H
 
-#include "cospi.h"
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-static const double pi = 3.141592653589793238462643383279502884e+00;
+#include "trigonometric_export.h"
 
-double cos_pi(double x)
-{
-	bool invert = false;
-	if (fabs(x) < 0.25) {
-		return cos(pi * x);
-	}
+TRIGONOMETRIC_EXPORT double trigonometric_cos_pi(double x);
 
-	if (x < 0) {
-		x = -x;
-	}
-
-	double rem = floor(x);
-	if (((int)rem) & 1) {
-		invert = !invert;
-	}
-
-	rem = x - rem;
-	if (rem > 0.5) {
-		rem = 1 - rem;
-		invert = !invert;
-	}
-
-	if (rem == 0.5) {
-		return 0.0;
-	}
-
-	if (rem > 0.25) {
-		rem = 0.5 - rem;
-		rem = sin(pi * rem);
-	} else {
-		rem = cos(pi * rem);
-	}
-
-	return invert ? (-rem) : rem;
-
+#ifdef __cplusplus
 }
+#endif
+
+#endif
 

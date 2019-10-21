@@ -33,17 +33,19 @@
 #include <math.h>
 #include <stdbool.h>
 
-#include "sinpi.h"
+#include "trigonometric_sinpi.h"
 
 static const double pi = 3.141592653589793238462643383279502884e+00;
 
-double sin_pi(double x)
+double trigonometric_sin_pi(double x)
 {
+	bool invert;
+	double rem;
+
 	if(x < 0) {
-		return -sin_pi(-x);
+		return -trigonometric_sin_pi(-x);
 	}
 
-	bool invert;
 	if (x < 0.5) {
 		return sin(pi * x);
 	}
@@ -55,7 +57,7 @@ double sin_pi(double x)
 		invert = false;
 	}
 
-	double rem = floor(x);
+	rem = floor(x);
 	if (((int)rem) & 1) {
 		invert = !invert;
 	}
